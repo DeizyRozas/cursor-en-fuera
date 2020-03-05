@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Pasa sobre las imagenes para hacer ejercicio!</h2>
+
+    <div>
+        <div class="container-img">
+            <img src="img1.png" data-src="img2.png">  
+            <h3 class="dato"> Lunes: 5 series 15 repeticiones</h3>
+            
+        </div>
+        <div class="container-img">
+            <img src="img1.png" data-src="img2.png"> 
+            <h3 class="dato"> Martes: 4series 20 repeticiones</h3>
+        </div>
+        <div class="container-img">
+        <img src="img1.png" data-src="img2.png"> <br>
+        <h3 class="dato">Miercoles: 3 series 25 repeticiones</h3>
+        </div>
+        <div class="container-img">
+        <img src="img1.png" data-src="img2.png">
+        <h3 class="dato">Jueves: 2 series 50 repeticiones</h3> 
+        </div>
+        <div class="container-img">
+        <img src="img1.png" data-src="img2.png"> 
+        <h3 class="dato">Viernes: Descanso</h3>
+        </div>
+        <div class="container-img">
+        <img src="img1.png" data-src="img2.png"> 
+        <h3 class="dato">Sabado: 5 series 20 repeticiones</h3>
+        </div>
+    </div>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+        $('img').hover(function() {
+        const source = $(this).attr('src');
+        const xtemp = $(this).attr('data-src');
+         $(this).attr('src', xtemp);
+         $(this).attr('data-src',source);
+        });
+
+
+        $('.container-img').hover(function(){
+		    $('.dato',this).fadeToggle();
+	    }, function(){
+		$('.dato',this).fadeToggle();
+        });
+
+
+    </script>
+</body>
+</html>
